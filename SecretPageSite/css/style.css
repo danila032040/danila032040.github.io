@@ -6,6 +6,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 /*----------------------------------------------------------*/
 
@@ -71,7 +72,7 @@ nav {
   color: #fff;
 }
 main {
-  min-height: 694px;
+  min-height: 559px;
 }
 footer {
   overflow: hidden;
@@ -161,6 +162,13 @@ footer .wrapper {
   }
   header .phone {
     float: none;
+  }
+  nav {
+    text-align: center;
+  }
+  nav li {
+    float: none;
+    display: block;
   }
 }
 
