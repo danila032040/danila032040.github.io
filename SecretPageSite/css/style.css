@@ -9,11 +9,6 @@ body {
   scroll-behavior: smooth;
 }
 
-body {
-  background-image: url("../img/background.png");
-  background-color: #c7b39b;
-}
-
 /*----------------------------------------------------------*/
 
 h1 {
@@ -163,7 +158,7 @@ main * {
   font-family: OpenSans-Regular, Arial;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 main h2 {
@@ -179,13 +174,13 @@ main .payments {
   overflow: hidden;
 }
 
-main .payments p {
+main .payments .header {
   font-style: bold;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 24px;
 }
 main .payments figure figcaption {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   font-style: bold;
 }
@@ -197,6 +192,40 @@ main .payments .cash {
   float: left;
 }
 main .payments .cashless {
+  float: right;
+}
+
+/* -------------------------Advantages---------------------- */
+main .advantages {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+}
+
+main .advantages img {
+}
+
+main .advantages .header {
+  font-style: bold;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+main .advantages figure figcaption {
+  font-size: 16px;
+  font-weight: bold;
+  font-style: bold;
+}
+
+main .advantages ul {
+  list-style-type: none;
+  padding: 0 0;
+}
+main .advantages .left {
+  float: left;
+}
+main .advantages .right {
   float: right;
 }
 
@@ -227,13 +256,16 @@ main .payments .cashless {
   }
 
   /* -------------------------PAYMENTS---------------------- */
-  main .payments .cash {
-    float: none;
-  }
+  main .payments .cash,
   main .payments .cashless {
     float: none;
   }
-
+  /* ------------------------------------------------------- */
+  /* -------------------------Advantages---------------------- */
+  main .advantages .left,
+  main .advantages .right {
+    float: none;
+  }
   /* ------------------------------------------------------- */
 }
 
@@ -247,5 +279,11 @@ main .payments .cashless {
   }
   footer .contacts {
     float: none;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  main .advantages img {
+    width: 256px;
   }
 }
