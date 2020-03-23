@@ -8,6 +8,12 @@ body {
   padding: 0;
   scroll-behavior: smooth;
 }
+
+body {
+  background-image: url("../img/background.png");
+  background-color: #c7b39b;
+}
+
 /*----------------------------------------------------------*/
 
 h1 {
@@ -153,7 +159,56 @@ footer .wrapper {
 
 /* ------------------------------------------------------- */
 
+main * {
+  font-family: OpenSans-Regular, Arial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+main h2 {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+/* -------------------------PAYMENTS---------------------- */
+main .payments {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+}
+
+main .payments p {
+  font-style: bold;
+  font-weight: bold;
+  font-size: 20px;
+}
+main .payments figure figcaption {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: bold;
+}
+main .payments ul {
+  list-style-type: none;
+  padding: 0 0;
+}
+main .payments .cash {
+  float: left;
+}
+main .payments .cashless {
+  float: right;
+}
+
+/* ------------------------------------------------------- */
+
 @media screen and (max-width: 750px) {
+  nav ol {
+    padding: 0px 0px;
+  }
+  nav li {
+    margin-right: 0px;
+  }
   .wrapper {
     text-align: center;
   }
@@ -170,6 +225,16 @@ footer .wrapper {
     float: none;
     display: block;
   }
+
+  /* -------------------------PAYMENTS---------------------- */
+  main .payments .cash {
+    float: none;
+  }
+  main .payments .cashless {
+    float: none;
+  }
+
+  /* ------------------------------------------------------- */
 }
 
 @media screen and (max-width: 870px) {
