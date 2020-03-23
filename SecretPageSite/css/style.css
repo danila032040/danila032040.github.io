@@ -283,7 +283,10 @@ main .advantages .right {
 }
 
 @media screen and (max-width: 1200px) {
+  /* -------------------------Advantages---------------------- */
+
   main .advantages img {
     width: 256px;
+    /* ------------------------------------------------------- */
   }
 }
