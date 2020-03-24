@@ -9,6 +9,11 @@ body {
   scroll-behavior: smooth;
 }
 
+figure {
+  padding: 0px;
+  margin: 0px;
+}
+
 /*----------------------------------------------------------*/
 
 h1 {
@@ -179,6 +184,10 @@ main .payments .header {
   font-weight: bold;
   font-size: 24px;
 }
+main .payments figure img {
+  width: 100%;
+  max-width: 256px;
+}
 main .payments figure figcaption {
   font-size: 16px;
   font-weight: bold;
@@ -212,10 +221,20 @@ main .advantages .header {
   font-size: 24px;
 }
 
+main .advantages figure img {
+  width: 100%;
+  max-width: 512px;
+}
+
 main .advantages figure figcaption {
   font-size: 16px;
   font-weight: bold;
   font-style: bold;
+}
+
+main .advantages figure,
+main .payments figure {
+  margin: 0 25px;
 }
 
 main .advantages ul {
@@ -285,8 +304,8 @@ main .advantages .right {
 @media screen and (max-width: 1200px) {
   /* -------------------------Advantages---------------------- */
 
-  main .advantages img {
-    width: 256px;
+  main .advantages figure img {
+    max-width: 256px;
     /* ------------------------------------------------------- */
   }
 }
