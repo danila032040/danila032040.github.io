@@ -1,0 +1,19 @@
+* {
+  scroll-behavior: smooth;
+}
+
+.myexamples-center {
+  display: block;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.btn-block {
+  width: 100%;
+  display: block;
+}
+
+@media screen and (max-width: 243px) {
+  .aboutme {
+    margin-top: 50px;
+  }
+}
