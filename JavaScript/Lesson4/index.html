@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+      console.log(sum(2, 5));
+      console.log(sum());
+      console.log(sum(1, 2, 3, 4, 5));
+      console.log(sum(...[1, 2, 3, 4, 5])); //spead-operator распаковывает массив в набор параметров
+      console.log(fact(5));
+      cls();
+
+      let sum2 = sum;
+      console.dir(sum2);
+      console.log(sum2(5, 5));
+
+      let sum3 = (a, b) => {
+        return a + b;
+      };
+      console.log(sum3(1, 2, 3, 4, 5));
+
+      //оператор rest
+
+      let sum4 = (...args) => {
+        let result = 0;
+        for (let value of args) result += value;
+        return result;
+      };
+      console.log(sum4(1, 2, 3, 4, 5));
+
+      function func1(a) {
+        function test(a) {
+          return a + 2;
+        }
+        return test(a);
+      }
+
+      console.log(func1(1));
+
+      function sum() {
+        let result = 0;
+        for (let value of arguments) result += value;
+        return result;
+      }
+
+      function fact(b) {
+        if (b == 1) return 1;
+        return fact(b - 1) * b;
+      }
+
+      function cls() {
+        console.clear();
+      }
+    </script>
+  </body>
+</html>
