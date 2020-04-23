@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Изучаем классы</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      class User {
+        sex = "male";
+
+        //Закрытое поле, поддерживают не все браузеры!!!
+        #toleranty = "all";
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+        info() {
+          return `name - ${this.name}, age - ${this.age}`;
+        }
+        get Name() {
+          return this.name;
+        }
+        set Name(value) {
+          this.name = value;
+        }
+      }
+      let user1 = new User(1, 2);
+      console.log(user1.info());
+      user1.Name = "Глупый";
+      console.log(user1.info());
+      console.log(user1.sex);
+
+      //Наследования
+      class Student extends User {
+        constructor(name, age, speciality) {
+          super(name, age);
+          this.speciality = speciality;
+        }
+        info() {
+          return `${super.info()}, speciality - ${this.speciality}`;
+        }
+      }
+      let student1 = new Student("Alex", "Gordon", "Scientist");
+      console.log(student1.info());
+
+      //Привязка к контенту
+      let info2 = student1.info;
+      console.log(info2);
+      //console.log(info2());
+
+      function test() {
+        console.log("TEST is working");
+        console.dir(this);
+        console.log(`name - ${this.name}`);
+        console.log();
+      }
+      //test.apply(student1, [a, b]);
+      //test.call(user1, a, b);
+
+      let test2 = test.bind(student1);
+      test2();
+      //test();
+
+      //Максимум в массиве
+      let arr = [10, 2, 3, 4, 5, 6];
+      console.log(Math.max(...arr));
+      console.log(Math.max.apply(null, arr));
+    </script>
+  </body>
+</html>

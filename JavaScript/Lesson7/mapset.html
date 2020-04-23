@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Изучаем map и set</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+      //Множество
+      let set1 = new Set();
+      console.dir(set1);
+
+      //Добавление элементов
+      set1.add(1);
+      set1.add(1);
+      set1.add(2);
+      set1.add("1");
+
+      //Удаление элементов
+      set1.delete(1);
+
+      //Ключи и значения
+      console.log(set1.entries());
+      console.log(set1.keys());
+      console.log(set1.values());
+
+      //Проверка существования элемента
+      console.log(set1.has());
+
+      //Очистка значений
+      set1.clear();
+
+      //Количество элементов
+      set1.size;
+
+      //map
+      let map1 = new Map();
+      console.dir(map1);
+      map1.set("Gomel", 520000);
+      map1.set("Minsk", 3000000);
+      console.dir(map1);
+      console.log(map1.get("Gomel"));
+    </script>
+  </body>
+</html>
