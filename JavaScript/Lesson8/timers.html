@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div:first-child {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        display: none;
+      }
+
+      #text {
+        width: 200px;
+      }
+      #text p {
+        height: 0px;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <div id="text">
+      <h2>Заголовок секции</h2>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius quod
+        aspernatur error harum? Dignissimos dolorum aspernatur enim, reiciendis
+        laudantium blanditiis eius error necessitatibus quaerat, molestias
+        provident, accusamus ipsa ullam itaque.
+      </p>
+    </div>
+
+    <script>
+      // запускает greating через 5000 милисекунд. функия вызывается один раз
+      window.setTimeout(greating, 5000);
+      function greating() {
+        alert("Hello");
+      }
+
+      setTimeout(() => {
+        // блок через 2 секукнды станет видимым
+        document.querySelector("div").style.display = "block";
+      }, 2000);
+
+      let color = [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "skyblue",
+        "blue",
+        "purple",
+      ];
+      let index = 0;
+      let count = 0;
+      // запускает функцию через 1 секунду
+      let timerID = setInterval(() => {
+        document.querySelector("div").style.backgroundColor = color[index++];
+        if (index > color.length - 1) index = 0;
+        count++;
+        if (count > 10) clearInterval(timerID); // остакновка таймера для смены фона
+      }, 500);
+
+      let dh = 0;
+      document.querySelector("h2").addEventListener("click", function () {
+        //console.dir(this.nextElementSibling);
+        let timer = setInterval(() => {
+          dh += 5;
+          this.nextElementSibling.style.height = dh + "px";
+          if (dh > 300) clearInterval(timer);
+        }, 50);
+      });
+    </script>
+  </body>
+</html>
