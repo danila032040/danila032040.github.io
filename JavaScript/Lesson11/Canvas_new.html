@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      canvas {
+        width: 800px;
+        height: 400px;
+        border: 1px solid grey;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Работа с холстом</h2>
+    <canvas></canvas>
+    <script>
+      let canv = document.querySelector("canvas");
+      // определяется контент
+      let ctx = canv.getContext("2d"); //двумерная графика
+      console.dir(ctx);
+      // рисование простых фигур
+      // рисование замкнутой линии
+      ctx.beginPath();
+      //задаем параметры линии
+      ctx.lineWidth = 10;
+      ctx.strokeStyle = "rgb(100,200,240)";
+      ctx.moveTo(20, 20); // перемещение в точку
+      ctx.lineTo(120, 20); // рисуем линию
+      ctx.lineTo(70, 70); // рисуем линию
+      //ctx.lineTo(20, 20); // рисуем линию
+      ctx.closePath();
+      // отрисовка границ
+      ctx.stroke();
+      // заливка контура
+      ctx.fillStyle = "rgb(255,255,0)";
+      ctx.fill();
+
+      // рисование прямоугольника
+      // прямоугольник с границей по контуру
+      ctx.strokeRect(150, 20, 40, 40);
+      // закрашенный прямоугольник
+      ctx.fillStyle = "red";
+      ctx.fillRect(150, 70, 40, 40);
+      ctx.clearRect(160, 85, 20, 10);
+
+      // рисование дуг окружностей
+      //аргументы 50,50 - начальная точка
+      //0 - радиус, 0 - начальный угол, Math.Pi - конечный
+      ctx.beginPath();
+      ctx.arc(240, 50, 30, 0, (45 * Math.PI) / 180, false);
+      ctx.strokeStyle = "blue";
+      ctx.stroke();
+      ctx.closePath();
+    </script>
+  </body>
+</html>

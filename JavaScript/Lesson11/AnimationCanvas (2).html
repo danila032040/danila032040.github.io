@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Анимация на холсте</title>
+    <style>
+      canvas {
+        border: 10px #333 solid;
+        width: 80%;
+        height: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <canvas id="myCanvas"> </canvas>
+    </div>
+
+    <script>
+      var mainCanvas = document.querySelector("#myCanvas");
+      var mainContext = mainCanvas.getContext("2d");
+
+      var canvasWidth = mainCanvas.width;
+      var canvasHeight = mainCanvas.height;
+
+      var xPos = -500;
+      function drawCircle() {
+        mainContext.clearRect(0, 0, canvasWidth, canvasHeight);
+
+        // цвет фона
+        mainContext.fillStyle = "#F8F8F8";
+        mainContext.fillRect(0, 0, canvasWidth, canvasHeight);
+
+        // рисование круга
+        mainContext.beginPath();
+
+        let size = canvasWidth > canvasHeight ? canvasHeight : canvasWidth;
+
+        let radius = Math.round(size / 2 - size / 5);
+        // mainContext.arc(Math.round(canvasWidth / 2 ), Math.round(canvasHeight / 2 ), radius, 0, Math.PI * 2, false);
+        mainContext.arc(
+          xPos,
+          Math.round(canvasHeight / 2),
+          radius,
+          0,
+          Math.PI * 2,
+          false
+        );
+        mainContext.closePath();
+
+        mainContext.fillStyle = "#FFCC00";
+        mainContext.fill();
+
+        mainContext.lineWidth = 10;
+        mainContext.strokeStyle = "#DCB001";
+        mainContext.stroke();
+
+        xPos += 5;
+        if (xPos > 1000) {
+          xPos = -500;
+        }
+
+        requestAnimationFrame(drawCircle);
+      }
+
+      drawCircle();
+    </script>
+  </body>
+</html>

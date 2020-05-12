@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Рисование в Canvas</title>
+        <meta charset='utf-8' />
+	</head>
+	<body>
+	<h3>Работа с тенями</h3>
+		<canvas height='600' width='600' id='example1'></canvas>
+		<script>
+
+// Определение контекста рисования
+canvas = document.getElementById("example1");
+context = canvas.getContext("2d");
+   
+// Рисуем прямоугольник с тенью
+context.rect(20, 20, 200, 100);
+context.fillStyle = "#8ED6FF";
+context.shadowColor = "#bbbbbb";
+context.shadowBlur = 20; //размытые границы тени
+context.shadowOffsetX = 30;
+context.shadowOffsetY = 30;
+context.fill();
+
+// Рисуем три строчки текста с тенью
+context.textBaseline = "top";
+context.font = "bold 20px Arial";
+
+context.shadowBlur = 3;
+context.shadowOffsetX = 2;
+context.shadowOffsetY = 2;
+context.fillStyle = "steelblue";
+context.fillText("Едва различимая тень.", 0, 175);
+
+context.shadowBlur = 0;
+context.shadowOffsetX = -10;
+context.shadowOffsetY = 20;
+context.fillStyle = "green";
+context.fillText("Здесь используется \"далекая\" тень...", 10, 225);
+
+context.shadowBlur = 5;
+context.shadowOffsetX = 0;
+context.shadowOffsetY = 0;
+context.shadowColor = "black";
+context.fillStyle = "white";
+context.fillText("Эта тень не смещена от исходного изображения и создает эффект ореола.", 10, 300);
+
+// Рисуем звезду с тенью (загрузка из изображения)
+context.shadowOffsetX = 10;
+context.shadowOffsetY = 10;
+context.shadowColor = "#bbbbbb";
+context.shadowBlur = 4;
+
+var img = new Image();
+img.onload = function() {
+	context.drawImage(img, 200, 30);
+};
+	
+
+img.src = "http://professorweb.ru/downloads/star.png";
+
+</script>
+
+<h3>Работа с градиентами</h3>
+		<canvas height='300' width='600' id='example2'></canvas>
+		<script>
+
+// Определение контекста рисования
+canvas = document.getElementById("example2");
+context = canvas.getContext("2d");
+// Создаем градиент от точки (10,0) до точки (100,0)
+var gradient = context.createLinearGradient(10, 0, 100, 0);
+
+// Добавляем два цвета
+gradient.addColorStop(0, "magenta");
+gradient.addColorStop(1, "yellow");
+
+// Вызываем функцию для рисования
+drawHeart(60, 50);
+
+// Рисуем фигуру
+context.fillStyle = gradient;
+context.fill();
+context.stroke();
+	
+
+// Вспомогательная функция для рисования фигуры в виде сердца
+function drawHeart(x, y) {
+		context.beginPath();
+		context.moveTo(x, y);
+		context.bezierCurveTo(x, y - 40, x - 45, y - 40, x - 48, y);
+		context.bezierCurveTo(x - 45, y + 30, x, y + 40, x, y + 80);
+		context.bezierCurveTo(x, y + 90, x + 45, y + 40, x + 45, y);
+		context.bezierCurveTo(x + 45, y - 30, x, y - 30, x, y);
+		context.closePath();
+}	
+</script>		
+	</body>
+</html>
