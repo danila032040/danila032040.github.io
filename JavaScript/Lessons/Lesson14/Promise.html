@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Объект Promise</title>
+  </head>
+  <body>
+    <button onclick="Run();">Запустить</button>
+    <div></div>
+    <script>
+      //простой пример
+      function Run() {
+        //создание объекта Promise
+        let myFirstPromise = new Promise((resolve, reject) => {
+          setTimeout(function () {
+            //resolve("Всё прошло хорошо!"); // Ура! Всё прошло хорошо!
+            reject("Error!!!");
+          }, 2000);
+        });
+
+        myFirstPromise.then(
+          (successMessage) => {
+            console.log("Ура! " + successMessage);
+          },
+          (error) => {
+            console.log("Something is wrong!!!" + error);
+          }
+        );
+        /*myFirstPromise.then((successMessage) => {
+          alert("Ура! " + successMessage);
+        });*/
+      }
+
+      //пример с сервером
+
+      function myAsyncFunction(url) {
+        return new Promise((resolve, reject) => {
+          const xhr = new XMLHttpRequest();
+          xhr.open("GET", url);
+          xhr.onload = () => resolve(xhr.responseText);
+          xhr.onerror = () => reject(xhr.responseText);
+          xhr.send();
+        });
+      }
+
+      let SecondPromise = myAsyncFunction("http://localhost/test222JSON.txt");
+      SecondPromise.then(
+        (successMessage) => {
+          console.log("Данные с сервера" + successMessage);
+        },
+        (error) => {
+          document.querySelector("div").innerHTML = error;
+        }
+      );
+    </script>
+  </body>
+</html>

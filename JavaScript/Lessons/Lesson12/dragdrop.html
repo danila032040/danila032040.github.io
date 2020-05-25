@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        margin: 5px;
+        outline-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="background-color: red;" draggable="true"></div>
+    <div style="background-color: green;" draggable="true"></div>
+    <div style="background-color: blue;" draggable="true"></div>
+    <script>
+      document.querySelectorAll("div").forEach(function (elem) {
+        elem.addEventListener("dragstart", function (event) {
+          this.style.opacity = 0.3;
+          let style = window.getComputedStyle(elem);
+          shiftX = event.pageX - Number.parseInt(style.left);
+          shiftY = event.pageY - Number.parseInt(style.top);
+          this.style.outline = "dotted";
+          event.dataTransfer.setData(
+            "color",
+            event.target.style.backgroundColor
+          );
+        });
+        elem.addEventListener("dragend", function (event) {
+          this.style.left = event.pageX - shiftX + "px";
+          this.style.top = event.pageY - shiftY + "px";
+          this.style.opacity = 1;
+          this.style.outline = "none";
+        });
+        elem.addEventListener("dragover", (event) => {
+          event.preventDefault();
+        });
+
+        elem.addEventListener("drop", function (event) {
+          this.style.backgroundColor = event.dataTransfer.getData("color");
+        });
+      });
+    </script>
+  </body>
+</html>

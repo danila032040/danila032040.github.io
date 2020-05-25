@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Получение данных геолокации и их отображение</h2>
+    <button>Получить данные</button>
+    <div>
+      <h2>Координаты</h2>
+      <p id="coords"></p>
+    </div>
+    <div>
+      <h2>Посмотреть на карте</h2>
+      <a href="" id="show" target="_blank">Показать на карте</a>
+    </div>
+    <script>
+      console.dir(navigator);
+
+      //Назнначаем обработчик события
+      document.querySelector("button").addEventListener("click", () => {
+        navigator.geolocation.getCurrentPosition(succes, err);
+
+        //Если успешно
+        function succes(position) {
+          // Объект position - координаты
+          let str = `Широта - ${position.coords.latitude}, долгота - ${position.coords.longitude}`;
+          document.querySelector("#coords").innerHTML = str;
+          document.querySelector(
+            "#show"
+          ).href = `https://www.google.com/maps/place/${position.coords.latitude} ${position.coords.longitude}`;
+        }
+
+        function err(error) {
+          document.querySelector("#coords").innerHTML =
+            "Не удалось получить данные";
+        }
+      });
+    </script>
+  </body>
+</html>

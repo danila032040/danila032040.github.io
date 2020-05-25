@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Получение данных</h2>
+    <button>Метод GET</button>
+    <button>Метод POST</button>
+    <p id="out"></p>
+    <script>
+      // получение данных методом GET
+      document.querySelector("button").addEventListener("click", () => {
+        // создаем объект XMLHttpRequest
+        const xhr = new XMLHttpRequest();
+        // настраиваем запрос
+        xhr.open("GET", "http://localhost/testJSON.txt");
+        // назначаем обработчик на загрузку
+        xhr.onload = function () {
+          let str = this.responseText;
+          // парсим список
+          let arr = JSON.parse(str);
+          str = "";
+          for (let elem of arr) {
+            str += `<a href="${elem.url}">${elem.display}<br>`;
+          }
+          // выводим в абзац
+          document.querySelector("#out").innerHTML = str;
+        };
+        // посылаю запрос
+        xhr.send();
+        console.dir(xhr);
+      });
+
+      // получение данных методом POST
+      document.querySelectorAll("button")[1].addEventListener("click", () => {
+        // создаем объект XMLHttpRequest
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "http://localhost/Lang.php");
+        //формируем заголовок
+        xhr.setRequestHeader(
+          "Content-type",
+          "application/x-www-form-urlencoded"
+        );
+        // пишем обработчик
+        xhr.onload = function () {
+          document.querySelector("#out").innerHTML = this.response;
+        };
+        // отправлем запрос с дополнительными параметрами
+        xhr.send(`lang=en&name=MrSmith`);
+      });
+    </script>
+  </body>
+</html>

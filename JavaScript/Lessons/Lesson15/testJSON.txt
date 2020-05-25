@@ -1,0 +1,14 @@
+[
+{
+"display":"Google",
+"url":"http://www.google.ru"
+},
+{
+"display":"Yandex",
+"url":"http://www.yandex.ru"
+},
+{
+"display":"Tut.by",
+"url":"http://www.tut.by"
+}
+]

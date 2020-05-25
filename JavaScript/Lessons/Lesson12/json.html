@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use script";
+      let student = {
+        name: "Boris",
+        sex: "male",
+        marks: {
+          OOP: 9,
+          WinAPI: 8,
+          "C#": 10,
+        },
+        date: Date("10.5.1995"),
+        info: function () {
+          console.log(this.name);
+        },
+      };
+
+      student.info();
+      console.dir(student);
+
+      //Сериализация
+      let str = JSON.stringify(student);
+      console.log(str);
+
+      let obj = JSON.parse(str);
+      console.log(obj);
+    </script>
+  </body>
+</html>

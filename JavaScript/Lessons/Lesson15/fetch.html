@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Получение данных с использованием fetch</h2>
+    <button>Получить данные</button>
+    <script>
+      let promise = fetch("http://localhost/testJSON.txt");
+      promise.then(
+        (response) => {
+          console.log(response.json());
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+
+      //конструкция async&await
+      document.querySelector("button").addEventListener("click", () => {
+        (async () => {
+          let response = await fetch("http://localhost/testJSON.txt");
+          let arr = await response.json();
+          console.dir(arr);
+        })();
+      });
+    </script>
+  </body>
+</html>

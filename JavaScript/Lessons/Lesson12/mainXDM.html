@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Обмен сообщениями между страницами</title>
+  </head>
+  <body>
+    <h2>XDM — Cross-domain messaging</h2>
+    <iframe src="banner.html" id="iframe" width="320" height="310"> </iframe>
+    <p></p>
+    <button onclick="send()">Послать сообщение</button>
+    <script>
+      "use script";
+      function send() {
+        //получаем доступ к фрейму
+        let frame = document.getElementById("iframe").contentWindow;
+        let message = "Изучайте JavaScript";
+        // посылаем сообщение
+        frame.postMessage(message, "*");
+      }
+    </script>
+  </body>
+</html>
