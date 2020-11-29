@@ -2,7 +2,23 @@
   scroll-behavior: smooth;
 }
 
+.welcome {
+  background-image: url("../img/cool-background.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+}
+
 .aboutme {
+  background-image: url("../img/cool-background.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+
+  font-size: 24px;
+}
+
+.myexamples {
   background-image: url("../img/cool-background.png");
   background-size: cover;
   background-attachment: fixed;
@@ -19,11 +35,17 @@
   display: block;
 }
 
-.aboutme {
-  min-height: 100vh;
-}
+.welcome,
+.aboutme,
 .myexamples {
-  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.welcome p {
+  font-size: 64px;
+  margin: auto;
+  animation: AnimationWelcome 1s ease-in-out, glow 2.5s linear infinite;
 }
 
 .myPhoto {
@@ -51,4 +73,18 @@
   .myPhoto {
     float: none;
   }
+}
+
+@keyframes AnimationWelcome {
+  from {
+    transform: translateY(-250px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+footer div {
+  font-size: 24px;
+  width: 100%;
 }
