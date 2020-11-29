@@ -53,6 +53,21 @@
   max-width: 300px;
   float: left;
 }
+.MainMe {
+  max-width: 70%;
+  background-color: black;
+  overflow: hidden;
+}
+
+.MainMe:hover img {
+  opacity: 0.5;
+  transform: scale(1.1);
+}
+
+.MainMe img {
+  transition: 1s;
+  animation: MainMeApearing 1s ease-in-out;
+}
 
 .img-hover-zoom {
   background-color: black;
@@ -81,6 +96,16 @@
   }
   to {
     transform: translateY(0px);
+  }
+}
+@keyframes MainMeApearing {
+  from {
+    transform: translateX(-250px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
   }
 }
 
