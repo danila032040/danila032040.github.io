@@ -2,6 +2,13 @@
   scroll-behavior: smooth;
 }
 
+.aboutme {
+  background-image: url("../img/cool-background.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+}
+
 .myexamples-center {
   display: block;
   max-width: 800px;
@@ -12,8 +19,36 @@
   display: block;
 }
 
-@media screen and (max-width: 243px) {
-  .aboutme {
-    margin-top: 50px;
+.aboutme {
+  min-height: 100vh;
+}
+.myexamples {
+  height: 100vh;
+}
+
+.myPhoto {
+  max-height: 300px;
+  max-width: 300px;
+  float: left;
+}
+
+.img-hover-zoom {
+  background-color: black;
+  overflow: hidden;
+}
+
+.img-hover-zoom img {
+  transform-origin: 30% 10%;
+  transition: transform 1s, opacity 0.5s ease-out;
+}
+
+.img-hover-zoom:hover img {
+  opacity: 0.5;
+  transform: scale(1.5);
+}
+
+@media screen and (max-width: 500px) {
+  .myPhoto {
+    float: none;
   }
 }
