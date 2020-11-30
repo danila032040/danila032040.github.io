@@ -46,7 +46,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="./">
+            <a class="nav-link" href="./#">
               Главная <span class="sr-only">(current)</span></a
             >
           </li>
@@ -54,25 +54,16 @@
             <a class="nav-link" href="./#aboutme">
               Обо мне <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Проекты
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#studprojects">Учебные</a>
-              <a class="dropdown-item" href="#commercialprojects">Коммерческие</a>
-            </div>
+          <li class="nav-item">
+            <a class="nav-link" href="./#projects">
+              Проекты <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./#contacts">
+              Контакты <span class="sr-only">(current)</span></a>
           </li>
         </ul>
-        <div class="contacts nav-item">
+        <div class="contactsNav nav-item">
           <a class="bg-light btn btn-outline-elegant-color" href="https://vk.com/danila032040" target="_blank">
             <i class="fab fa-vk fa-2x"></i>
           </a>
@@ -90,7 +81,7 @@
       
         <!-- /Welcome -->
         <div class="container-flui welcome">
-            <p class="text-center text-uppercase font-weight-bold">Добро пожаловать на сайт Радченко Даниила!</p>
+            <p class="text-center text-uppercase font-weight-bold">Добро пожаловать на сайт!</p>
             <div class="m-5 mx-auto rounded align-self-center MainMe">
               <img src="MainPage/img/MainMe.jpg" class="img-fluid rounded" alt="My photo">
             </div>
@@ -124,14 +115,15 @@
                   Мы начали разработку Biology Brain на Unreal Engine 4. Программа вышла не очень, так как содержала в себе 2д графику, ради которой был не эффективно использован игровой движок. 
                   Я принялся за переписыванию Biology Brain на языке программирования C#. Из этого вышла программа "Train Your Brain", которая до сих пор актуальна в нашей школе.
                 </p>
+                <p>С ноября 2020 г. я стажируюсь в компании <a class="alert-link text-dark" href="https://openmygame.com/" target="_blank">OpenMyGame</a>, с которой я познакомился ещё в 2014 году на Республиканском конкурсе, где представлял <a href="http://www.ctv.by/novosti-minska-i-minskoy-oblasti/belorusskie-shkolniki-pridumali-energosberegayushchie-zhalyuzi" class="alert-link text-dark" target="_blank">"Умные Жалюзи"</a>.</p>
               <!-- </div> -->
 
               <h3 class=" m-5 p-5 text-center">Это все, что вы можете знать на данный момент.</h3>
         </div> 
         <!-- /AboutMe -->
 
-        <!-- MyExamples -->
-        <div class="container-fluid myexamples px-5">
+        <!-- Projects -->
+        <div class="container-fluid projects px-5" id="projects">
           <h2 class="pt-5 px-5 row justify-content-center h1 text-center">Примеры проектов:</h2>
         
         
@@ -142,12 +134,12 @@
               <div class="card col-md-3 m-3 p-0" >
                   <img src="MainPage/img/Red_Papers_Studio_Logo.png" class="card-img-top " alt="www.redpapstudio.com">
                 <div class="card-body">
-                  <h5 class="card-title">www.redpapstudio.com</h5>
+                  <h5 class="card-title text-center">www.redpapstudio.com</h5>
                   <p class="card-text">Red Papers Studio - моя студия разработки видео-игр, программного обеспечения и конечно музыки.
                   </p>
                 </div>
                 <div class="card-footer">
-                  <a href="SecretPageSite/redpapstudio" class="btn btn-lg btn-outline-dark stretched-link btn-block" target="_blank">Переходи сюда!</a>
+                  <a href="https://redpapstudio" class="btn btn-lg btn-outline-dark stretched-link btn-block" target="_blank">Переходи сюда!</a>
                 </div>
                 
               </div>
@@ -159,7 +151,7 @@
                   alt="www.remfrig.by">
               </img>
                 <div class="card-body">
-                  <h5 class="card-title">www.remfrig.by</h5>
+                  <h5 class="card-title text-center">www.remfrig.by</h5>
                   <p class="card-text">www.remfrig.by - сайт-визитка о указании услуги в ремонте холодильников в Гомеле и Гомельской области. 
                   </p>
                 </div>
@@ -169,11 +161,54 @@
                 </div>
               </div>
               <!-- /SecondCard -->
+
+              <!-- ThirdCard -->
+              <div class="card col-md-3 m-3 p-0">
+                <img src="https://www.belta.by/uploads/lotus/news/000023_496A3D32A0C7A0C24325823A004B4A8F_944827.jpg" class="card-img-top" alt="Умные жалюзи">
+                </img>
+                <div class="card-body">
+                  <h5 class="card-title text-center">Умные жалюзи</h5>
+                  <p class="card-text">Умные жалюзи - проект будущего, где ты не переживаешь за отключение электроэнергии в твоём доме!
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <a href="http://www.ctv.by/novosti-minska-i-minskoy-oblasti/belorusskie-shkolniki-pridumali-energosberegayushchie-zhalyuzi" class="btn btn-lg btn-outline-dark stretched-link btn-block" target="_blank">Переходи
+                    сюда!</a>
+                </div>
+              </div>
+              <!-- /ThirdCard -->
+
+              <!-- FirthCard -->
+              <div class="card col-md-3 m-3 p-0">
+                <img src="./MainPage/img/RedLights4K-2.png"
+                  class="card-img-top" alt="Red Lights">
+                </img>
+                <div class="card-body">
+                  <h5 class="card-title text-center">Red Lights</h5>
+                  <p class="card-text">Red Lights - музыкальная итальянская группа, созданная мной и моим другом из Италии, музыка в которой вдохновлена Beatles, Twenty One Pilots и т.п.
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <a href="http://redpapstudio/redlights"
+                    class="btn btn-lg btn-outline-dark stretched-link btn-block" target="_blank">Переходи
+                    сюда!</a>
+                </div>
+              </div>
+              <!-- /FirthCard -->
+
             </div>
           </div>
         </div>
+        <!-- /Projects -->
 
-        <!-- /MyExamples -->
+
+
+
+        <!-- Contacts -->
+        <div id="contacts" class="container-fluid contacts p-5">
+          <h2 class="text-dark text-center h1">Контакты</h2>
+        </div>
+        <!-- /Contacts -->
     </main>
     <!-- /Main -->
 
